@@ -8,11 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Calculator',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Calculator'),
+      home: MyHomePage(title: 'Calculator Using Flutter'),
     );
   }
 }
@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _output = "0";
     } else if (buttonText == ".") {
       if (_output.contains(".")) {
-        print("Already contains a decimals");
         return;
       } else {
         _output = _output + buttonText;
@@ -74,8 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
     } else {
       _output = _output + buttonText;
     }
-
-    print(_output);
     setState(() {
       output = double.parse(_output).toStringAsFixed(2);
     });
